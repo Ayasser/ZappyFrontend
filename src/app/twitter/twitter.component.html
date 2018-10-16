@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Tweets Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class=" container table-responsive" *ngIf="Tweets">
+  <h2>Tweets</h2>
+
+  <table class="table table-hover ">
+    <thead>
+    <tr class="info">
+      <th>Tweet ID</th>
+      <th>Fetched Date</th>
+      <th>Tweet Date</th>
+      <th>Tweet Text</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tweet of Tweets">
+      <td>{{tweet.Tweet_id}}</td>
+      <td>{{tweet.Created_Date}}</td>
+      <td>{{tweet.Tweet_Date}}</td>
+      <td>{{tweet.Tweet_Text}}</td>
+
+    </tr>
+    </tbody>
+  </table>
+
+
+  <!--<div>-->
+  <!--<generic-table [gtClasses]="'table-sm'" [gtSettings]="configObject.settings" [gtFields]="configObject.fields"-->
+  <!--[gtData]="Tweets">-->
+
+  <!--</generic-table>-->
+  <!--</div>-->
+</div>
+</body>
+
+</html>
