@@ -5,7 +5,6 @@ import {TwitterService} from './twitter.service';
 import {Tweet} from './twitter.model';
 
 
-
 @Component({
   selector: 'app-twitter',
   templateUrl: './twitter.component.html',
@@ -35,10 +34,6 @@ export class TwitterComponent implements OnInit {
         objectKey: 'Created_Date',
 
       }, {
-        objectKey: 'Tweet_id_str',
-
-
-      }, {
         objectKey: 'Tweet_Date',
 
 
@@ -64,8 +59,21 @@ export class TwitterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.twitterService.getProducts().subscribe((re) => {this.Tweets = re;
-    console.log("---",re); });
-  }
+    this.twitterService.getTweets().subscribe((re) => {
+      this.Tweets = re;
+      console.log('---', re);
+    });
+  };
 
+  OnClickSlack() {
+    this.twitterService.onSlack().subscribe((re) => {
+      console.log('---', re);
+    });
+  };
+
+  OnClickTwitter() {
+    this.twitterService.onTweet().subscribe((re) => {
+      console.log('---', re);
+    });
+  };
 }

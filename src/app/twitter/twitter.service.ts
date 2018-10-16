@@ -13,10 +13,16 @@ export class TwitterService {
   }
 
 
-  public getProducts(model: string = 'tweet_list'){
+  public getTweets(model: string = 'tweet_list'){
     return this.http.get(`${AppSettings.getApiEndpoint()}/${model}/`).map((response) => response.json());
 
   }
+  public onTweet(model: string = 'twitter'){
+    return this.http.get(`${AppSettings.getApiEndpoint()}/${model}/`).map((response) => response.json());
 
+  }
+  public onSlack(model: string = 'slack'){
+    return this.http.get(`${AppSettings.getApiEndpoint()}/${model}/`).map((response) => response.json());
 
+  }
 }
